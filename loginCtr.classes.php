@@ -36,28 +36,24 @@ class LoginCtr
         {
             //redirect to author page
             header("Location: author/author.php");
-            //header("Location:");
         }
 
         if($role == 'reviewer')
         {
             //redirect to reviewer page
             header("Location: reviewer/reviewer.php");
-            //header("Location:");
         }
 
         if($role == 'system_administrator')
         {
             //redirect to system administrator page
             header("Location: system_administrator/system_administrator.php");
-            //header("Location:");
         }
 
         if($role == 'conference_chair')
         {
             //redirect to conference chair page
             header("Location: conference_chair/conference_chair.php");
-            //header("Location:");
         }
 
   }

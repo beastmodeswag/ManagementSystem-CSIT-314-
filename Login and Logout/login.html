@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+<head>
+ <link rel="stylesheet" href="./CSS.css"> 
+ <script defer src="JS.js"></script> 
+</head>
+
+<body>
+	<main id="main-holder">
+	<h1>Conference Management System </h1>
+	<form id="login-form">
+    <table>
+	
+        <tr>
+			<td>Login As:
+			<select name="sl" id = "sl">
+				<option value="none">None</option>
+				<option value="">System Admin</option>
+				<option value="">Conference Chair</option>
+				<option value="">Reviewer</option>
+				<option value="">Author</option>
+			</select>
+					
+			<td><label> Username: </label>
+            <td><input type="text" name="username" id="username-field" class="login-form-field" placeholder="Username" disabled></td>
+        </tr>
+         <tr>
+			<td></td>
+            <td><label> Password: </label></td>
+            <td> <input type="password" name="password" id="password-field" class="login-form-field" placeholder="Password" disabled></td>
+        </tr>
+        <tr>
+			<td></td><td></td>
+            <td><button type="button" value="Login" id="login-form-submit" onclick="pageRedirect()"> Log in</button></td>
+        </tr>
+	</form>
+   </table>
+   <div id="login-error-msg-holder">
+      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+    </div>
+ 
+	
+</body>
+</html>
+
+ 

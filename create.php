@@ -44,6 +44,8 @@ if (!$table_exists)
 
 //create other tables
 
+
+
 $conn->close();
 
 ?>
