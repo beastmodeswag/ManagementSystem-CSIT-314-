@@ -17,13 +17,6 @@ class LoginCtr
 
   public function loginUser()
   {
-      //check if input is empty
-      if($this->emptyInput() == true)
-      {
-        //console.log("empty");
-        header("Location: index.php");
-      }
-
       //create an object of the user class(entity) to access the functions
       $user = new User();
     
@@ -44,10 +37,10 @@ class LoginCtr
             header("Location: reviewer/reviewer.php");
         }
 
-        if($role == 'system_administrator')
+        if($role == 'admin')
         {
             //redirect to system administrator page
-            header("Location: system_administrator/system_administrator.php");
+            header("Location: admin/AdminDashboard.php");
         }
 
         if($role == 'conference_chair')
@@ -56,16 +49,6 @@ class LoginCtr
             header("Location: conference_chair/conference_chair.php");
         }
 
-  }
-
-  private function emptyInput()
-  {
-    $result = false;
-    if(empty($this->uid) || (empty($this->pwd)))
-    {
-        $result = true;
-    }
-    return $result;
   }
 
 }

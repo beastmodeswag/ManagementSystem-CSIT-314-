@@ -32,7 +32,6 @@ if (!$table_exists)
 {
 	$sql = "create table $dbtable (
 			u_id varchar(30) primary key,
-			u_name varchar(30),
 			u_password varchar(30),
 			u_role varchar(30)
 			)";

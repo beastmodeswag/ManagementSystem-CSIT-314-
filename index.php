@@ -1,48 +1,54 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-    <meta charset="UTF-8">
-	<meta name="viewport" content="user-scalable=no, width=device-width, initial-scale=1.0" />
-	<meta name="apple-mobile-web-app-capable" content="yes" />
-	<title>Admin User</title>
-	<link type="text/css" rel="stylesheet" href="./css/index.css">
-	<script src="https://www.google.com/recaptcha/api.js"></script>
-	<script src="https://kit.fontawesome.com/5390fcdc06.js" crossorigin="anonymous"></script>
-	<script type="text/javascript" src="/js/index.js"></script>
-
+ <link rel="stylesheet" href="./CSS.css">  
 </head>
+
 <body>
-	<!---- Create database and tables required for the program (if not created already)---->
+    <!---- Create database and tables required for the program (if not created already)---->
 	<?php
 		include_once("create.php");
 		//include_once("insert_testDataScript.php");
 	?>
+	<main id="main-holder">
+	<h1>Conference Management System </h1>
+	<form id="login-form" method="post">
+    <table>
+	
+        <tr>
+			<td>
+			<!--
+			Login As:
+			<select name="sl" id = "sl">
+				<option value="none">None</option>
+				<option value="author">System Admin</option>
+				<option value="reviewer">Conference Chair</option>
+				<option value="system_administrator">Reviewer</option>
+				<option value="conference_chair">Author</option>
+			</select>
+			-->
+					
+			<td><label> Username: </label>
+            <td><input type ="text" name ="id" placeholder= "Username" class = "login-form-field" method="post" required></td>
+        </tr>
+         <tr>
+			<td></td>
+            <td><label> Password: </label></td>
+            <!--- <td><input type="password" name="pwd" id="password-field" class="login-form-field" placeholder="Password" disabled></td> --->
+            <td><input type ="password" name ="pwd" placeholder= "Password" class = "login-form-field" method="post" required></td> 
+        </tr>
+        <tr>
+			<td></td><td></td>
+            <td><button type="submit" name="submit"> Log in</button></td>
+        </tr>
+	</form>
+   </table>
+   <div id="login-error-msg-holder">
+      <p id="login-error-msg">Invalid username <span id="error-msg-second-line">and/or password</span></p>
+    </div>
 
-	<div class = "contentHolder">
-		<!--Logo header-->
-		<div class = "LogoHeader">
-			C A F É
-		</div>
-		<!--Subtext-->
-		<div class = "SubHeader">
-			The Café
-		</div>
 
-		<!--Who is logging in to this shit-->
-		<div class = "LoginTitle">
-			Login Page
-		</div>
-
-		<form class = "FormDesign" action="" method = "post">
-			<div class = "InputHolder">
-				<input type ="text" name ="id" placeholder= "Username" class = "UsernameField"method="post">
-				<input type ="password" name ="pwd" placeholder= "Password" class = "PasswordField" method="post">
-				<button type="submit" class = "LoginButton" name="submit">Login</button>
-			</div>
-		</form>
-	</div>
-
-	<?php
+    <?php
 
 		//on button press
 		if(isset($_POST['submit']))
@@ -50,10 +56,10 @@
 			$uid = $_POST['id'];
 			$pwd = $_POST['pwd'];
 
+
 			include "user.classes.php";
 			include "loginCtr.classes.php";
 			
-
 			$login = new LoginCtr($uid, $pwd);
 
 			$login->loginUser();
@@ -61,6 +67,9 @@
 
 	?>
 
-
+ 
+	
 </body>
-</html> 
+</html>
+
+ 
